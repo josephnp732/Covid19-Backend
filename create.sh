@@ -32,5 +32,5 @@ kubectl apply -f ./services/service-backbone.yaml &&
 
 
 # Get Backbone External-IP
-sleep 30
+sleep 15 &&
 kubectl get svc covid19-backbone
