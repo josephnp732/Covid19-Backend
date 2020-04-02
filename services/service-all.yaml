@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: covid19-all
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3001
+    targetPort: 3001
+  selector:
+    app: covid19-all

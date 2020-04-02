@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: covid19-backbone
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: covid19-backbone
+    spec:
+      containers:
+        - image: "josephnp732/covid19_backbone:v1.1"
+          imagePullPolicy: Always
+          name: covid19-backbone
+          ports:
+            - containerPort: 3000

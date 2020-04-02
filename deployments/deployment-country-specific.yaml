@@ -1,0 +1,17 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: covid19-country-specific
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: covid19-country-specific
+    spec:
+      containers:
+        - image: "josephnp732/covid19_country_specific:v1.5"
+          imagePullPolicy: Always
+          name: covid19-country-specific
+          ports:
+            - containerPort: 3003
