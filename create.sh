@@ -30,7 +30,9 @@ kubectl apply -f ./services/service-countries.yaml &&
 kubectl apply -f ./services/service-country-specific.yaml &&
 kubectl apply -f ./services/service-backbone.yaml &&
 
-
 # Get Backbone External-IP
 sleep 15 &&
-kubectl get svc covid19-backbone
+kubectl get svc covid19-backbone &&
+
+# Get Kubernetes Dashboard URL
+kubectl get svc kubernetes
