@@ -10,7 +10,7 @@ spec:
         app: covid19-backbone
     spec:
       containers:
-        - image: "josephnp732/covid19_backbone:v1.1"
+        - image: "josephnp732/covid19_backbone:v2.0"
           imagePullPolicy: Always
           name: covid19-backbone
           ports:
