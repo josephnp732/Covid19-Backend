@@ -49,4 +49,8 @@ kubectl get svc covid19-backbone -o json | jq .status.loadBalancer.ingress[0].ho
 
 # Get Grafana Hostname
 echo "Grafana Hostname" &&
-kubectl get svc -n monitoring grafana -o json | jq .status.loadBalancer.ingress[0].hostname
+kubectl get svc -n monitoring grafana -o json | jq .status.loadBalancer.ingress[0].hostname &&
+
+# Get Kuberbetes Dashboard Hostname
+echo "Kubernetes Dashboard Hostname" &&
+kubectl get svc kubernetes-dashboard -n kube-system -o json | jq .status.loadBalancer.ingress[0].hostname
