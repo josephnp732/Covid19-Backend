@@ -40,4 +40,13 @@ kubectl create -f ./prometheus/prometheus-service.yaml --namespace=monitoring &&
 # Grafana Deployment
 kubectl create -f ./grafana/grafana-datasource-config.yaml &&
 kubectl create -f ./grafana/grafana-datasource-deploy.yaml &&
-kubectl create -f ./grafana/grafana-datasource-service.yaml
+kubectl create -f ./grafana/grafana-datasource-service.yaml &&
+
+# Get Backbone Hostname
+sleep 15 &&
+echo "Service API Hostname" &&
+kubectl get svc covid19-backbone -o json | jq .status.loadBalancer.ingress[0].hostname &&
+
+# Get Grafana Hostname
+echo "Grafana Hostname" &&
+kubectl get svc -n monitoring grafana -o json | jq .status.loadBalancer.ingress[0].hostname
