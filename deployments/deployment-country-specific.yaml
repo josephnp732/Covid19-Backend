@@ -10,7 +10,7 @@ spec:
         app: covid19-country-specific
     spec:
       containers:
-        - image: "josephnp732/covid19_country_specific:v1.5"
+        - image: "josephnp732/covid19_country_specific:v1.6"
           imagePullPolicy: Always
           name: covid19-country-specific
           ports:

@@ -10,7 +10,7 @@ spec:
         app: covid19-all
     spec:
       containers:
-        - image: "josephnp732/covid19_all:v1"
+        - image: "josephnp732/covid19_all:v1.1"
           imagePullPolicy: Always
           name: covid19-all
           ports:
