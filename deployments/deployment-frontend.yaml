@@ -1,0 +1,18 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: covid19-frontend
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: covid19-frontend
+    spec:
+      containers:
+        - image: "josephnp732/covid19_frontend:test"
+          imagePullPolicy: Always
+          name: covid19-frontend
+          ports:
+            - containerPort: 80
+      restartPolicy: Always

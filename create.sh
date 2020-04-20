@@ -20,6 +20,7 @@ kubectl apply -f ./deployments/deployment-all.yaml &&
 kubectl apply -f ./deployments/deployment-countries.yaml &&
 kubectl apply -f ./deployments/deployment-country-specific.yaml &&
 kubectl apply -f ./deployments/deployment-backbone.yaml &&
+kubectl apply -f ./deployments/deployment-frontend.yaml &&
 
 # Kubernetes Dashboard
 kubectl create -f https://raw.githubusercontent.com/dinorows/TCO490/master/kubernetes-dashboard-15.yaml &&
@@ -29,6 +30,7 @@ kubectl apply -f ./services/service-all.yaml &&
 kubectl apply -f ./services/service-countries.yaml &&
 kubectl apply -f ./services/service-country-specific.yaml &&
 kubectl apply -f ./services/service-backbone.yaml &&
+kubectl apply -f ./services/service-frontend.yaml &&
 
 # Prometheus Deployment
 kubectl create namespace monitoring &&
@@ -54,3 +56,7 @@ kubectl get svc -n monitoring grafana -o json | jq .status.loadBalancer.ingress[
 # Get Kuberbetes Dashboard Hostname
 echo "Kubernetes Dashboard Hostname" &&
 kubectl get svc kubernetes-dashboard -n kube-system -o json | jq .status.loadBalancer.ingress[0].hostname
+
+# Get Kuberbetes Dashboard Hostname
+echo "Covid19 Frontend" &&
+kubectl get svc covid19-frontend -o json | jq .status.loadBalancer.ingress[0].hostname
