@@ -20,7 +20,7 @@ MacOS Command: `open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Googl
 * Install kubectl CLI Tool (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * Install jq CLI Tool (https://stedolan.github.io/jq/download/)
 
-##### Using the Endpoint for Frontend:
+#### Using the Endpoint for Frontend:
 
 * **GET** All Data : `http://<ExternalIP>/all`
 * **GET** All Country : `http://<ExternalIP>/countries`
@@ -30,7 +30,7 @@ _Note:_
 `External IP`: Public facing DNS Name generated at the end of the script
 `country`: Example: USA, India, Bahrain, etc.
 
-### To deploy and run application just run `bash destroy.sh`
+### To destroy resouces, run: `bash destroy.sh`
 
 Real time data generated using: 
 https://documenter.getpostman.com/view/8854915/SzS7R6uu?version=latest
