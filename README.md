@@ -10,8 +10,18 @@ Will take about 20 minutes to provision and about Endpoints will be ready to acc
 * External Backend API Hostname
 * Grafana Dashboard Hostname (Append `:3000` to the hostname)
 * Kubernetes Dashboard Hostname
-* Front-end Hostname (Open frontend with _Chrome Securities Disabled_) <br/>
-MacOS Command: `open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security`
+* Front-end Hostname 
+
+#### To access the frontend Hostname:
+
+* Change the **fetchUrl** variable with _AWS External Backend API Hostname_ in the frontend (https://github.com/ajaymohandas89/Covid19_Devops)
+* Dockerize your front end using `Docker Build .` in the root directory of the project and push the project onto DockerHub with a desired tagname
+* Change the image name (Line 13) in `deployment-frontend.yaml` from the deployments folder of this repo to the name of the frontend docker image
+* Redeploy the frontend deployment using `kubectl apply -f ./deployments/deployment-frontend.yaml` in the backend repo
+* Hit the frontend AWS Hostname to see the output after deploying it in AWS EKS Cluster
+* Open frontend with _Chrome Securities Disabled_ <br/>
+**MacOS Command:** `open -n -a /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --args --user-data-dir="/tmp/chrome_dev_test" --disable-web-security` </br>
+**For Windows:** Open command line interface where you have web browser installed and disable web security for it. For example, to disable security for chrome type chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 
 ### <ins> Pre-requisites</ins>:
 * Make sure to run Bash scripts on UNIX based system, MacOS or Windows WSL
