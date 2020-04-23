@@ -27,6 +27,9 @@ Will take about 20 minutes to provision and about Endpoints will be ready to acc
 * Make sure to run Bash scripts on UNIX based system, MacOS or Windows WSL
 * Install Terraform CLI Tool in installed (https://learn.hashicorp.com/terraform/getting-started/install.html)
 * Install AWS CLI Tool (https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+* Configure your AWS CLI with your IAM credentials (https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+* Install AWS IAM Authenticator CLI Tool (https://docs.aws.amazon.com/eks/latest/userguide/install-aws-iam-authenticator.html)
+* Install Docker Toolbox (https://docs.docker.com/toolbox/overview/)
 * Install kubectl CLI Tool (https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * Install jq CLI Tool (https://stedolan.github.io/jq/download/)
 
